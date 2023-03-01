@@ -2,10 +2,26 @@ import React from 'react';
 import styled from 'styled-components';
 import { Form, Input, Button } from 'antd';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
+const apiUrl = import.meta.env.VITE_BASE_URL;
 
 const Login = () => {
-  const onFinish = (values) => {
-    console.log('Received values of form: ', values);
+  const navigate = useNavigate();
+  
+  const onFinish = async (values) => {
+    try {
+      const response = await axios.post(`${apiUrl}/login`, values);
+      console.log('first',apiUrl)
+      console.log("Response",response)
+      if (response.data) {
+        alert('Login Successfully!');
+        navigate('/');
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (

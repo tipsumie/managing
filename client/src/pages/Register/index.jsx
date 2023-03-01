@@ -1,11 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Form, Input, Button } from 'antd';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
+const apiUrl = import.meta.env.VITE_BASE_URL;
 
 const Register = () => {
-  const onFinish = (values) => {
-    console.log('Received values of form: ', values);
+  const navigate = useNavigate();
+
+  const onFinish = async (values) => {
+    try {
+      const response = await axios.post(`${apiUrl}/register`, values);
+      console.log('first',apiUrl)
+      console.log("Response",response)
+      if (response.data) {
+        alert('Register Successfully!');
+        navigate('/login');
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
+  
 
   return (
     <RegisterPageContainer>
