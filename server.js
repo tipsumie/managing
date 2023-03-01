@@ -17,7 +17,7 @@ app.use(bodyParser.json({ limit: '20mb' }));
 app.use(cors());
 
 // Route
-// http://localhost:3000/api
+// http://localhost:5001/api
 readdirSync('./routes').map((r) => app.use('/api', require('./routes/' + r)));
 
 const port = process.env.PORT;
