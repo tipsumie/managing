@@ -1,12 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-
+import { BrowserRouter } from 'react-router-dom';
+import AppRoutes from './routes/AppRoutes';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-   <h1>Hello Test</h1>
+    <BrowserRouter>
+       <AppRoutes />
+      </BrowserRouter>
   )
 }
 
