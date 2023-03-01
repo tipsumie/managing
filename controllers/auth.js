@@ -1,6 +1,10 @@
 const bcrypt = require('bcryptjs');
 const User = require('../models/userModel');
+const jwt = require('jsonwebtoken');
 
+const jwtSecret = process.env.JWT_SECRET;
+
+// register
 exports.register = async (req, res) => {
   try {
     // Check user
@@ -21,6 +25,39 @@ exports.register = async (req, res) => {
     await user.save();
 
     res.send('Register Successfully');
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('Server Error!');
+  }
+};
+
+// login
+exports.login = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    // Check user exist in DB
+    var user = await User.findOne({ email });
+    if (user) {
+      //   Check Password
+      const isMatch = await bcrypt.compare(password, user.password);
+      if (!isMatch) {
+        return res.status(400).send('Password Invalid!');
+      }
+      // Payload
+      const payload = {
+        user: {
+          id: user._id,
+          role: user.role,
+        },
+      };
+      // Generate Token
+      jwt.sign(payload, jwtSecret, { expiresIn: '12h' }, (err, token) => {
+        if (err) throw err;
+        res.json({ token, payload });
+      });
+    } else {
+      return res.status(400).send('User Not found!!');
+    }
   } catch (err) {
     console.log(err);
     res.status(500).send('Server Error!');
