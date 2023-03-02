@@ -16,10 +16,10 @@ connectDB();
 
 // middleware
 app.use(morgan('dev'));
-app.use(bodyParser.json({ limit: '20mb' }));
+app.use(bodyParser.json());
 app.use(cors());
 
-// Route
+// Loop route
 readdirSync('./routes').map((r) => app.use('/api', require('./routes/' + r)));
 
 const port = process.env.PORT;
