@@ -55,12 +55,21 @@ exports.deleteProduct = async (req, res) => {
 //update product
 exports.updateProduct = async (req, res) => {
   try {
-    const product = await Product.findOneAndUpdate(
-      { _id: req.params.id },
-      req.body,
-      { new: true }
-    ).exec();
-    res.send(product);
+    const productId = req.params.id;
+    const updateObj = {};
+
+    for (const key in req.body) {
+      updateObj[key] = req.body[key];
+    }
+    const product = await Product.findByIdAndUpdate(
+      { _id: productId },
+      updateObj,
+      {
+        new: true,
+      }
+    );
+
+    res.json(product);
   } catch (error) {
     console.log(error);
     res.status(500).send('Update Product Error!');

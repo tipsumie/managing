@@ -8,8 +8,8 @@ const connectDB = require('./config/dbConfig');
 
 const app = express();
 
-// Serving static files
-app.use(express.static(__dirname + '/public'));
+// Serving static files 
+app.use('/images', express.static(__dirname+"/public/uploads"));
 
 // Connect MongoDB
 connectDB();
