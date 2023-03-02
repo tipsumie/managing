@@ -45,7 +45,7 @@ exports.deleteProduct = async (req, res) => {
       _id: req.params.id,
     }).exec();
 
-    res.send(deleted);
+    res.send('Delete A Product Successfully');
   } catch (error) {
     console.log(error);
     res.status(500).send('Delete Product Error!');
@@ -62,7 +62,6 @@ exports.updateProduct = async (req, res) => {
       updateObj[key] = req.body[key];
     }
 
-
     const product = await Product.findByIdAndUpdate(
       { _id: productId },
       { ...updateObj, image: req.file.filename },
@@ -71,7 +70,7 @@ exports.updateProduct = async (req, res) => {
       }
     );
 
-    res.json(product);
+    res.send('Update A Product Successfully');
   } catch (error) {
     console.log(error);
     res.status(500).send('Update Product Error!');

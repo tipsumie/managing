@@ -20,12 +20,16 @@ yarn dev
 ```
 
 ### Setting environment variable
+
 .env file at client directory
+
 ```bash
 VITE_BASE_URL = 'http://localhost:5001/api'
 VITE_BASE_IMAGE_URL = 'http://localhost:5001'
 ```
+
 .env file at server directory
+
 ```bash
 PORT=5001
 MONGODB_URL='mongodb+srv://managing:RGOQjjeji4mxzm3Y@cluster0.ru32gug.mongodb.net/?retryWrites=true&w=majority'
@@ -55,15 +59,15 @@ CLOUDINARY_CLOUD_API_SECRET='SSTyCBhV7IF3zcj1IC2rVimP-dg'
 
 ### API Document
 
-| API               | HTTP Method | headers   | response              | Description          |
-| ----------------- | ----------- | --------- | --------------------- | -------------------- |
-| /api/register     | POST        | -         | Register Successfully | Register             |
-| /api/login        | POST        | -         | { token, payload }    | Login to the app     |
-| /api/product      | POST        | authtoken | { product }           | Create a product     |
-| /api/products     | GET         | authtoken | {all products }       | Find all product     |
-| /api/products/:id | GET         | authtoken | {a product }          | Find a product by id |
-| /api/product/:id  | PATCH       | authtoken | 286                   | Update a product     |
-| /api/product/     | DELETE      | authtoken | 286                   | Delete a product     |
+| API               | HTTP Method | headers   | response                      | Description          |
+| ----------------- | ----------- | --------- | ----------------------------- | -------------------- |
+| /api/register     | POST        | -         | Register Successfully         | Register             |
+| /api/login        | POST        | -         | { token, payload }            | Login to the app     |
+| /api/product      | POST        | authtoken | { product }                   | Create a product     |
+| /api/products     | GET         | authtoken | {all products }               | Find all product     |
+| /api/products/:id | GET         | authtoken | {a product }                  | Find a product by id |
+| /api/product/:id  | PATCH       | authtoken | Update A Product Successfully | Update a product     |
+| /api/product/     | DELETE      | authtoken | Delete A Product Successfully | Delete a product     |
 
 ## Request body
 
@@ -87,7 +91,9 @@ CLOUDINARY_CLOUD_API_SECRET='SSTyCBhV7IF3zcj1IC2rVimP-dg'
 ```
 
 #### Create a product
+
 select form-data and fill in key-value.
+
 ```bash
 {
     "name": "Product Name",
@@ -104,7 +110,9 @@ select form-data and fill in key-value.
 ```
 
 #### Update a product
+
 select form-data and fill in key-value which you need to update.
+
 ```bash
 {
     "name": "New Product Name",
