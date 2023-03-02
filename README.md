@@ -117,7 +117,7 @@ select form-data and fill in key-value which you need to update.
 #### Delete a product
 
 ```bash
-{
+
    "id":"6400586052d9179f2ce4265e"
-}
+
 ```
