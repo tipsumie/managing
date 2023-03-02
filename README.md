@@ -40,24 +40,75 @@ begin this command at project root directory
 
 ### API Document
 
-| API           | HTTP Method | headers | req.body | response | Description |
-| ------------- | ----------- | ------- | -------- | -------- | ----------- |
-| /api/register | POST        | -       | {        |
+| API               | HTTP Method | headers   | response              | Description          |
+| ----------------- | ----------- | --------- | --------------------- | -------------------- |
+| /api/register     | POST        | -         | Register Successfully | Register             |
+| ---               | ---         | ---       | ---                   | ---                  |
+| /api/login        | POST        | -         | { token, payload }    | Login to the app     |
+| ---               | ---         | ---       | ---                   | ---                  |
+| /api/product      | POST        | authtoken | { product }           | Create a product     |
+| ---               | ---         | ---       | ---                   | ---                  |
+| /api/products     | GET         | authtoken | {all products }       | Find all product     |
+| ---               | ---         | ---       | ---                   | ---                  |
+| /api/products/:id | GET         | authtoken | {a product }          | Find a product by id |
+| ---               | ---         | ---       | ---                   | ---                  |
+| /api/product/:id  | PATCH       | authtoken | 286                   | Update a product     |
+| ---               | ---         | ---       | ---                   | ---                  |
+| /api/product/     | DELETE      | authtoken | 286                   | Delete a product     |
 
-    "username":"Rm",
+## Request body
+
+#### Register
+
+```bash
+{
+    "username":"Jk",
+    "email":"jk@gmail.com",
+    "password":"123123"
+}
+```
+
+#### Login
+
+```bash
+{
     "email":"rm@gmail.com",
     "password":"123123"
+}
+```
 
-| }                 | Register Successfully | Register  |
-| ----------------- | --------------------- | --------- | --- | --- | -------------------- |
-| /api/login        | POST                  | -         | 290 | 286 | Login to the app     |
-| ---               | ---                   | ---       | --- | --- | ---                  |
-| /api/product      | POST                  | authtoken | 290 | 286 | Create a product     |
-| ---               | ---                   | ---       | --- | --- | ---                  |
-| /api/products     | GET                   | authtoken | 290 | 286 | Find all product     |
-| ---               | ---                   | ---       | --- | --- | ---                  |
-| /api/products/:id | GET                   | authtoken | 290 | 286 | Find a product by id |
-| ---               | ---                   | ---       | --- | --- | ---                  |
-| /api/product/:id  | PATCH                 | authtoken | 290 | 286 | Update a product     |
-| ---               | ---                   | ---       | --- | --- | ---                  |
-| /api/product/     | DELETE                | authtoken | 290 | 286 | Delete a product     |
+#### Create a product
+select form-data and fill in key-value.
+```bash
+{
+    "name": "Product Name",
+    "description": "The best product",
+    "image": *select file,
+    "price": 550,
+}
+```
+
+#### Find a product by id
+
+```bash
+    "id":"6400586052d9179f2ce4265e"
+```
+
+#### Update a product
+select form-data and fill in key-value which you need to update.
+```bash
+{
+    "name": "New Product Name",
+    "description": "The best product",
+    "image": *select file,
+    "price": 150,
+}
+```
+
+#### Delete a product
+
+```bash
+{
+   "id":"6400586052d9179f2ce4265e"
+}
+```
