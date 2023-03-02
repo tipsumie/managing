@@ -14,7 +14,11 @@ const Home = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get(`${apiUrl}/products`);
+      const response = await axios.get(`${apiUrl}/products`, {
+        headers: {
+          authtoken: `Bearer ${localStorage.getItem('token')}`,
+        },
+      });
       setProducts(response.data);
     } catch (error) {
       console.log(error);
