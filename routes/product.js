@@ -4,11 +4,12 @@ const router = express.Router();
 const { create, productList } = require('../controllers/product');
 // Middleware
 const { auth, adminCheck } = require('../middleware/auth');
+const { upload } = require('../middleware/uploadFile');
 
 //@Endpoint  http://localhost:5001/api/products
 //@Method    POST
 //@Access    Private
-router.post('/products', auth, adminCheck, create);
+router.post('/products', upload, create);
 
 //@Endpoint  http://localhost:5001/api/products
 //@Method    GET
