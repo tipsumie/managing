@@ -16,10 +16,11 @@ const Login = () => {
       console.log('first', apiUrl);
       console.log('Response', response);
       if (response.data) {
+        console.log(response.data)
         const { token, payload } = response.data;
         localStorage.setItem('token', token);
         localStorage.setItem('user', JSON.stringify(payload.user));
-        alert('Login Successfully!');
+        
         navigate('/');
       }
     } catch (error) {

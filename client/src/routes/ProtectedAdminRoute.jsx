@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const apiUrl = import.meta.env.VITE_BASE_URL;
 
-function ProtectedRoute(props) {
+function ProtectedAdminRoute(props) {
   const navigate = useNavigate();
 
   const getUser = async () => {
@@ -43,5 +43,5 @@ function ProtectedRoute(props) {
   }
 }
 
-export default ProtectedRoute;
+export default ProtectedAdminRoute;
    

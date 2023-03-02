@@ -12,10 +12,7 @@ const Register = () => {
   const onFinish = async (values) => {
     try {
       const response = await axios.post(`${apiUrl}/register`, values);
-      console.log('first',apiUrl)
-      console.log("Response",response)
       if (response.data) {
-        alert('Register Successfully!');
         navigate('/login');
       }
     } catch (error) {
