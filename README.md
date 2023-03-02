@@ -19,6 +19,23 @@ yarn dev
 
 ```
 
+### Setting environment variable
+.env file at client directory
+```bash
+VITE_BASE_URL = 'http://localhost:5001/api'
+VITE_BASE_IMAGE_URL = 'http://localhost:5001'
+```
+.env file at server directory
+```bash
+PORT=5001
+MONGODB_URL='mongodb+srv://managing:RGOQjjeji4mxzm3Y@cluster0.ru32gug.mongodb.net/?retryWrites=true&w=majority'
+JWT_SECRET='managing'
+
+CLOUDINARY_CLOUD_NAME='dpqi3rgxd'
+CLOUDINARY_CLOUD_API_KEY='392254835253833'
+CLOUDINARY_CLOUD_API_SECRET='SSTyCBhV7IF3zcj1IC2rVimP-dg'
+```
+
 ### Admin credetial
 
 ```bash
