@@ -9,13 +9,16 @@ const apiUrl = import.meta.env.VITE_BASE_URL;
 
 const Login = () => {
   const navigate = useNavigate();
-  
+
   const onFinish = async (values) => {
     try {
       const response = await axios.post(`${apiUrl}/login`, values);
-      console.log('first',apiUrl)
-      console.log("Response",response)
+      console.log('first', apiUrl);
+      console.log('Response', response);
       if (response.data) {
+        const { token, payload } = response.data;
+        localStorage.setItem('token', token);
+        localStorage.setItem('user', JSON.stringify(payload.user));
         alert('Login Successfully!');
         navigate('/');
       }
@@ -73,9 +76,9 @@ const Login = () => {
         </Form.Item>
 
         <p>
-       {` New to an account ?   `}
+          {` New to an account ?   `}
           <StyledLink to='/register' className='accout'>
-          {` Create an account`}
+            {` Create an account`}
           </StyledLink>
         </p>
 
@@ -116,7 +119,6 @@ const LoginButton = styled(Button)`
 `;
 
 const StyledLink = styled(Link)`
-
   &:hover {
     color: #f3713d;
   }

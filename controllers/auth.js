@@ -25,8 +25,8 @@ exports.register = async (req, res) => {
     await user.save();
 
     res.send('Register Successfully');
-  } catch (err) {
-    console.log(err);
+  } catch (error) {
+    console.log(error);
     res.status(500).send('Server Error!');
   }
 };
@@ -58,8 +58,22 @@ exports.login = async (req, res) => {
     } else {
       return res.status(400).send('User Not found!!');
     }
-  } catch (err) {
-    console.log(err);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('Server Error!');
+  }
+};
+
+// current user
+exports.currentUser = async (req, res) => {
+  try {
+   
+    const user = await User.findOne({ _id: req.user.id })
+      .select('-password')
+      .exec();
+    res.send(user);
+  } catch (error) {
+    console.log(error);
     res.status(500).send('Server Error!');
   }
 };

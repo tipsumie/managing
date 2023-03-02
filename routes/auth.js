@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 // Controller
-const { register, login } = require('../controllers/auth');
+const { register, login, currentUser } = require('../controllers/auth');
 // Middleware
 const { auth } = require('../middleware/auth');
 
@@ -15,8 +15,9 @@ router.post('/register', register);
 //@Access    Publish
 router.post('/login', login);
 
-router.get('/1', auth, (req, res) => {
-  res.send('Hello');
-});
+//@Endpoint  http://localhost:5001/api/current-user
+//@Method    GET
+//@Access    Private
+router.get('/current-user', auth, currentUser);
 
 module.exports = router;
