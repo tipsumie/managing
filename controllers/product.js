@@ -61,9 +61,10 @@ exports.updateProduct = async (req, res) => {
     for (const key in req.body) {
       updateObj[key] = req.body[key];
     }
+
     const product = await Product.findByIdAndUpdate(
       { _id: productId },
-      updateObj,
+      { ...updateObj, image: req.file.filename },
       {
         new: true,
       }
