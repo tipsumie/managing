@@ -21,8 +21,6 @@ yarn dev
 
 ### Admin credetial
 
-begin this command at project root directory
-
 ```bash
 {
   "email": "salary-hero",
@@ -43,17 +41,11 @@ begin this command at project root directory
 | API               | HTTP Method | headers   | response              | Description          |
 | ----------------- | ----------- | --------- | --------------------- | -------------------- |
 | /api/register     | POST        | -         | Register Successfully | Register             |
-| ---               | ---         | ---       | ---                   | ---                  |
 | /api/login        | POST        | -         | { token, payload }    | Login to the app     |
-| ---               | ---         | ---       | ---                   | ---                  |
 | /api/product      | POST        | authtoken | { product }           | Create a product     |
-| ---               | ---         | ---       | ---                   | ---                  |
 | /api/products     | GET         | authtoken | {all products }       | Find all product     |
-| ---               | ---         | ---       | ---                   | ---                  |
 | /api/products/:id | GET         | authtoken | {a product }          | Find a product by id |
-| ---               | ---         | ---       | ---                   | ---                  |
 | /api/product/:id  | PATCH       | authtoken | 286                   | Update a product     |
-| ---               | ---         | ---       | ---                   | ---                  |
 | /api/product/     | DELETE      | authtoken | 286                   | Delete a product     |
 
 ## Request body
