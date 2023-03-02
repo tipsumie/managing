@@ -5,10 +5,10 @@ const { create, productList } = require('../controllers/product');
 // Middleware
 const { auth, adminCheck } = require('../middleware/auth');
 
-//@Endpoint  http://localhost:5001/api/product
+//@Endpoint  http://localhost:5001/api/products
 //@Method    POST
 //@Access    Publish
-router.post('/product', auth, adminCheck, create);
+router.post('/products', auth, adminCheck, create);
 
 //@Endpoint  http://localhost:5001/api/product
 //@Method    GET
