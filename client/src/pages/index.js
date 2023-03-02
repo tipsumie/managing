@@ -1,6 +1,8 @@
+// Public
 import Register from './register';
 import Login from './Login';
-import Home from './Home';
+// Admin 
+import Home from './Admin/Home';
 
 
 export { Register, Login, Home };

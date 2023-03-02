@@ -3,7 +3,7 @@ const router = express.Router();
 // Controller
 const { register, login, currentUser } = require('../controllers/auth');
 // Middleware
-const { auth } = require('../middleware/auth');
+const { auth, adminCheck } = require('../middleware/auth');
 
 //@Endpoint  http://localhost:5001/api/register
 //@Method    POST
@@ -19,5 +19,10 @@ router.post('/login', login);
 //@Method    GET
 //@Access    Private
 router.get('/current-user', auth, currentUser);
+
+//@Endpoint  http://localhost:5001/api/current-admin
+//@Method    GET
+//@Access    Private
+router.get('/current-admin', auth, adminCheck, currentUser);
 
 module.exports = router;

@@ -9,7 +9,7 @@ function ProtectedRoute(props) {
 
   const getUser = async () => {
     try {
-      const response = await axios.get(`${apiUrl}/current-user`, {
+      const response = await axios.get(`${apiUrl}/current-admin`, {
         headers: {
           'authtoken': `Bearer ${localStorage.getItem('token')}`,
         },
