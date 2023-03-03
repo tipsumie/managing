@@ -35,9 +35,6 @@ PORT=5001
 MONGODB_URL='mongodb+srv://managing:RGOQjjeji4mxzm3Y@cluster0.ru32gug.mongodb.net/?retryWrites=true&w=majority'
 JWT_SECRET='managing'
 
-CLOUDINARY_CLOUD_NAME='dpqi3rgxd'
-CLOUDINARY_CLOUD_API_KEY='392254835253833'
-CLOUDINARY_CLOUD_API_SECRET='SSTyCBhV7IF3zcj1IC2rVimP-dg'
 ```
 
 ### Admin credetial
@@ -50,11 +47,10 @@ CLOUDINARY_CLOUD_API_SECRET='SSTyCBhV7IF3zcj1IC2rVimP-dg'
 ```
 
 ### Headers
-
+Here is authtoken for headers.
 ```bash
-{
-  "authtoken": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwMDE4ODY4MTE3NjRiYzgxZGI1ODZlIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY3Nzg1OTY3NSwiZXhwIjoxNjc5OTMzMjc1fQ.wwwS0LvxM-o6e_pabGthfX8939lC5Ws64OELAG54kLc",
-}
+ "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwMDE4ODY4MTE3NjRiYzgxZGI1ODZlIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY3Nzg1OTY3NSwiZXhwIjoxNjc5OTMzMjc1fQ.wwwS0LvxM-o6e_pabGthfX8939lC5Ws64OELAG54kLc",
+
 ```
 
 ### API Document
