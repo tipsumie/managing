@@ -104,7 +104,7 @@ select form-data and fill in key-value.
 #### Find a product by id
 
 ```bash
-    "id":"6400586052d9179f2ce4265e"
+    "id":"64008fd0cdbb54a2c549ee68"
 ```
 
 #### Update a product
@@ -124,6 +124,6 @@ select form-data and fill in key-value which you need to update.
 
 ```bash
 
-   "id":"6400586052d9179f2ce4265e"
+   "id":"64008fd0cdbb54a2c549ee68"
 
 ```
