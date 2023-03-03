@@ -47,9 +47,11 @@ JWT_SECRET='managing'
 ```
 
 ### Headers
+
 Here is authtoken for headers.
+
 ```bash
- "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwMDE4ODY4MTE3NjRiYzgxZGI1ODZlIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY3Nzg1OTY3NSwiZXhwIjoxNjc5OTMzMjc1fQ.wwwS0LvxM-o6e_pabGthfX8939lC5Ws64OELAG54kLc",
+Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwMDE4ODY4MTE3NjRiYzgxZGI1ODZlIiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY3Nzg1OTY3NSwiZXhwIjoxNjc5OTMzMjc1fQ.wwwS0LvxM-o6e_pabGthfX8939lC5Ws64OELAG54kLc
 
 ```
 
