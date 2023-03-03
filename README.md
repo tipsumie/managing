@@ -80,6 +80,7 @@ Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwMDE4ODY4MTE3
 ```
 
 #### Login
+Here is user credetial.
 
 ```bash
 {
@@ -90,7 +91,7 @@ Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwMDE4ODY4MTE3
 
 #### Create a product
 
-select form-data and fill in key-value.
+Select form-data and fill in key-value.
 
 ```bash
 {
@@ -109,7 +110,7 @@ select form-data and fill in key-value.
 
 #### Update a product
 
-select form-data and fill in key-value which you need to update.
+Select form-data and fill in key-value which you need to update.
 
 ```bash
 {
