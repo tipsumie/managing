@@ -44,7 +44,7 @@ CLOUDINARY_CLOUD_API_SECRET='SSTyCBhV7IF3zcj1IC2rVimP-dg'
 
 ```bash
 {
-  "email": "salary-hero",
+  "email": "admin@gmail.com",
   "password": "123123"
 }
 ```
