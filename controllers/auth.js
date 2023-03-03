@@ -51,7 +51,7 @@ exports.login = async (req, res) => {
         },
       };
       // Generate Token
-      jwt.sign(payload, jwtSecret, { expiresIn: '12h' }, (err, token) => {
+      jwt.sign(payload, jwtSecret, { expiresIn: '24d' }, (err, token) => {
         if (err) throw err;
         res.json({ token, payload });
       });
@@ -67,7 +67,6 @@ exports.login = async (req, res) => {
 // current user
 exports.currentUser = async (req, res) => {
   try {
-   
     const user = await User.findOne({ _id: req.user.id })
       .select('-password')
       .exec();
